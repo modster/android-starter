@@ -8,6 +8,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation3.runtime.NavKey
 import com.example.empty_activity.data.DataRepositoryImpl
+import com.example.empty_activity.ui.main.CameraWithMedia3EffectScreen
+import com.example.empty_activity.ui.main.XViewModel
 
 
 @Composable
@@ -17,13 +19,14 @@ fun MainScreen(
     viewModel: MainScreenViewModel = viewModel { MainScreenViewModel(DataRepositoryImpl()) },
 ) {
   val state by viewModel.uiState.collectAsStateWithLifecycle()
+  val xViewModel: XViewModel = viewModel()
   when (state) {
     MainScreenUiState.Loading    -> {
       Text("Loading")
     }
-    is MainScreenUiState.Success -> {
-      MainScreen(data = (state as MainScreenUiState.Success).data, modifier = modifier)
-    }
+     is MainScreenUiState.Success -> {
+         CameraWithMedia3EffectScreen(vm = xViewModel)
+     }
     is MainScreenUiState.Error   -> {
         Text("Error loading data: ${(state as MainScreenUiState.Error).throwable.message}")
     }
