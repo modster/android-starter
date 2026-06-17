@@ -1,5 +1,7 @@
 package com.example.empty_activity.ui.main
 
+import com.example.empty_activity.MainScreenUiState
+import com.example.empty_activity.MainScreenViewModel
 import com.example.empty_activity.data.DataRepository
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.flow.Flow

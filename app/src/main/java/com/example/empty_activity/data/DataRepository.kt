@@ -7,6 +7,6 @@ interface DataRepository {
   val data: Flow<List<String>>
 }
 
-class DefaultDataRepository : DataRepository {
+class DataRepositoryImpl : DataRepository {
   override val data: Flow<List<String>> = flow { emit(listOf("1","2","3")) }
 }
