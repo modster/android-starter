@@ -13,7 +13,13 @@ import kotlinx.coroutines.flow.stateIn
 class MainScreenViewModel(dataRepository: DataRepository) : ViewModel() {
   val uiState: StateFlow<MainScreenUiState> =
     dataRepository.data
-      .map<List<String>, MainScreenUiState>(::Success)
+      .map { result ->
+        if (result.status == com.example.empty_activity.data.DataStatus.SUCCESS) {
+          Success(result.data ?: emptyList())
+        } else {
+          MainScreenUiState.Error(result.error ?: Exception("Unknown error"))
+        }
+      }
       .catch { emit(MainScreenUiState.Error(it)) }
       .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), MainScreenUiState.Loading)
 }
