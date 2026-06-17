@@ -67,6 +67,11 @@ photon/
 - Don't enable `buildConfig` just to inject a constant; use Kotlin `const val` in source.
 
 ## COMMANDS
+
+This project uses `uv` for python v3.14 tasks.
+
+### Gradle
+
 ```bash
 ./gradlew assembleDebug          # build APK
 ./gradlew test                   # JVM unit tests (app/src/test) — currently broken, see gotchas
@@ -74,6 +79,13 @@ photon/
 ./gradlew lint                   # Android Lint
 ./gradlew :app:dependencies      # inspect resolved deps
 ```
+
+### Graphify: `uv graphify` generates a static call graph of the codebase. Output is in `graphify-out/` and can be viewed with `index.html` in that folder. The graph includes calls from Android framework entry points (e.g. `Activity.onCreate`) to app code, but does not include external library code (e.g. Compose runtime) or calls between library code.
+To update the graph, run:
+```bash
+uv graphify update graphify-out
+```
+
 No CI workflows, no Makefile, no pre-commit hooks, no detekt/ktlint configured.
 
 ## NOTES

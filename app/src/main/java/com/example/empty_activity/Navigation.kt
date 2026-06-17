@@ -8,9 +8,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.example.empty_activity.ui.main.MainScreen
+import com.example.empty_activity.ui.flashlight.FlashlightScreen
+import com.example.empty_activity.ui.flashlight.FlashlightViewModel
+import com.example.empty_activity.ui.screentorch.ScreenTorchScreen
 
-@Composable fun MainNavigation()
+@Composable fun MainNavigation(flashlightViewModel: FlashlightViewModel)
 {
     val backStack = rememberNavBackStack(Main)
 
@@ -19,12 +21,16 @@ import com.example.empty_activity.ui.main.MainScreen
         onBack = { backStack.removeLastOrNull() },
         entryProvider = entryProvider {
             entry<Main> {
-                MainScreen(
-                    onItemClick = { navKey -> backStack.add(navKey) },
+                FlashlightScreen(
+                    onScreenTorchClick = { backStack.add(ScreenTorch) },
+                    viewModel = flashlightViewModel,
                     modifier = Modifier
                         .safeDrawingPadding()
                         .padding(16.dp)
                 )
+            }
+            entry<ScreenTorch> {
+                ScreenTorchScreen()
             }
         },
     )
