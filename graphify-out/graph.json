@@ -1,66 +1,7 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {
-    "hyperedges": [
-      {
-        "id": "mvvm_architecture",
-        "label": "MVVM Architecture Flow",
-        "nodes": [
-          "mainscreen_composable",
-          "mainscreenviewmodel",
-          "datarepository_interface",
-          "defaultdatarepository"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.95,
-        "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt"
-      },
-      {
-        "id": "data_result_flow",
-        "label": "Data Result Flow Pattern",
-        "nodes": [
-          "dataresult",
-          "datastatus",
-          "datarepository_interface",
-          "mainscreenuistate"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.9,
-        "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt"
-      },
-      {
-        "id": "flashlight_implementation_plan",
-        "label": "Flashlight Implementation Components",
-        "nodes": [
-          "torch_controller_planned",
-          "chop_detector_planned",
-          "flashlightscreen_planned",
-          "flashlightviewmodel_planned",
-          "screentorchscreen_planned"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 0.95,
-        "source_file": "HANDOFF.md"
-      },
-      {
-        "id": "launcher_icon_density_set",
-        "label": "Multi-Density Launcher Icon Set",
-        "nodes": [
-          "ic_launcher_android_icon",
-          "android_adaptive_icons",
-          "density_independent_resources"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "app/src/main/res/mipmap-*dpi/ic_launcher*.webp"
-      }
-    ]
-  },
+  "graph": {},
   "nodes": [
     {
       "label": "build.gradle.kts",
@@ -73,44 +14,44 @@
       "norm_label": "build.gradle.kts"
     },
     {
-      "label": "MainScreenTest.kt",
+      "label": "FlashlightScreenTest.kt",
       "file_type": "code",
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "main_mainscreentest",
-      "community": 5,
-      "norm_label": "mainscreentest.kt"
+      "id": "flashlight_flashlightscreentest",
+      "community": 4,
+      "norm_label": "flashlightscreentest.kt"
     },
     {
-      "label": "MainScreenTest",
+      "label": "FlashlightScreenTest",
       "file_type": "code",
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "main_mainscreentest_mainscreentest",
-      "community": 5,
-      "norm_label": "mainscreentest"
+      "id": "flashlight_flashlightscreentest_flashlightscreentest",
+      "community": 4,
+      "norm_label": "flashlightscreentest"
     },
     {
       "label": ".setup()",
       "file_type": "code",
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
-      "source_location": "L15",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
+      "source_location": "L14",
       "_origin": "ast",
-      "id": "main_mainscreentest_mainscreentest_setup",
-      "community": 5,
+      "id": "flashlight_flashlightscreentest_flashlightscreentest_setup",
+      "community": 4,
       "norm_label": ".setup()"
     },
     {
-      "label": ".firstItem_exists()",
+      "label": ".flashlightControls_exist()",
       "file_type": "code",
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
-      "source_location": "L20",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
+      "source_location": "L35",
       "_origin": "ast",
-      "id": "main_mainscreentest_mainscreentest_firstitem_exists",
-      "community": 5,
-      "norm_label": ".firstitem_exists()"
+      "id": "flashlight_flashlightscreentest_flashlightscreentest_flashlightcontrols_exist",
+      "community": 4,
+      "norm_label": ".flashlightcontrols_exist()"
     },
     {
       "label": "MainActivity.kt",
@@ -126,7 +67,7 @@
       "label": "MainActivity",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "empty_activity_mainactivity_mainactivity",
       "community": 3,
@@ -143,24 +84,104 @@
       "norm_label": "componentactivity"
     },
     {
-      "label": ".onCreate()",
+      "label": "FlashlightViewModel",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
       "source_location": "L23",
       "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_mainactivity_kt_flashlightviewmodel",
+      "community": 3,
+      "norm_label": "flashlightviewmodel"
+    },
+    {
+      "label": "ChopDetector",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "chopdetector",
+      "community": 3,
+      "norm_label": "chopdetector"
+    },
+    {
+      "label": ".onCreate()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L36",
+      "_origin": "ast",
       "id": "empty_activity_mainactivity_mainactivity_oncreate",
-      "community": 0,
+      "community": 3,
       "norm_label": ".oncreate()"
     },
     {
       "label": "Bundle",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L23",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "bundle",
-      "community": 0,
+      "community": 3,
       "norm_label": "bundle"
+    },
+    {
+      "label": ".onStart()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "empty_activity_mainactivity_mainactivity_onstart",
+      "community": 3,
+      "norm_label": ".onstart()"
+    },
+    {
+      "label": ".onStop()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "empty_activity_mainactivity_mainactivity_onstop",
+      "community": 3,
+      "norm_label": ".onstop()"
+    },
+    {
+      "label": ".onKeyDown()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "empty_activity_mainactivity_mainactivity_onkeydown",
+      "community": 3,
+      "norm_label": ".onkeydown()"
+    },
+    {
+      "label": "Int",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_mainactivity_kt_int",
+      "community": 3,
+      "norm_label": "int"
+    },
+    {
+      "label": "KeyEvent",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "keyevent",
+      "community": 3,
+      "norm_label": "keyevent"
+    },
+    {
+      "label": "Boolean",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_mainactivity_kt_boolean",
+      "community": 3,
+      "norm_label": "boolean"
     },
     {
       "label": "Navigation.kt",
@@ -169,18 +190,28 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "empty_activity_navigation",
-      "community": 0,
+      "community": 6,
       "norm_label": "navigation.kt"
     },
     {
       "label": "MainNavigation()",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "L13",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "empty_activity_navigation_mainnavigation",
-      "community": 0,
+      "community": 6,
       "norm_label": "mainnavigation()"
+    },
+    {
+      "label": "FlashlightViewModel",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_navigation_kt_flashlightviewmodel",
+      "community": 6,
+      "norm_label": "flashlightviewmodel"
     },
     {
       "label": "NavigationKeys.kt",
@@ -213,13 +244,23 @@
       "norm_label": "navkey"
     },
     {
+      "label": "ScreenTorch",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/NavigationKeys.kt",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "empty_activity_navigationkeys_screentorch",
+      "community": 8,
+      "norm_label": "screentorch"
+    },
+    {
       "label": "DataRepository.kt",
       "file_type": "code",
       "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
       "source_location": "L1",
       "_origin": "ast",
       "id": "data_datarepository",
-      "community": 2,
+      "community": 7,
       "norm_label": "datarepository.kt"
     },
     {
@@ -229,7 +270,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "data_datarepository_dataresult",
-      "community": 2,
+      "community": 7,
       "norm_label": "dataresult"
     },
     {
@@ -239,7 +280,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "data_datarepository_datarepository",
-      "community": 2,
+      "community": 7,
       "norm_label": "datarepository"
     },
     {
@@ -248,8 +289,8 @@
       "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_flow",
-      "community": 2,
+      "id": "flow",
+      "community": 7,
       "norm_label": "flow"
     },
     {
@@ -258,8 +299,8 @@
       "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_list",
-      "community": 2,
+      "id": "list",
+      "community": 7,
       "norm_label": "list"
     },
     {
@@ -269,7 +310,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_string",
-      "community": 2,
+      "community": 7,
       "norm_label": "string"
     },
     {
@@ -279,7 +320,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "data_datarepository_defaultdatarepository",
-      "community": 2,
+      "community": 7,
       "norm_label": "defaultdatarepository"
     },
     {
@@ -289,8 +330,108 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "data_datarepository_datastatus",
-      "community": 2,
+      "community": 7,
       "norm_label": "datastatus"
+    },
+    {
+      "label": "ChopDetector.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "gesture_chopdetector",
+      "community": 5,
+      "norm_label": "chopdetector.kt"
+    },
+    {
+      "label": "ChopDetector",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "gesture_chopdetector_chopdetector",
+      "community": 5,
+      "norm_label": "chopdetector"
+    },
+    {
+      "label": "SensorEventListener",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "sensoreventlistener",
+      "community": 5,
+      "norm_label": "sensoreventlistener"
+    },
+    {
+      "label": ".start()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "gesture_chopdetector_chopdetector_start",
+      "community": 5,
+      "norm_label": ".start()"
+    },
+    {
+      "label": ".stop()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "gesture_chopdetector_chopdetector_stop",
+      "community": 5,
+      "norm_label": ".stop()"
+    },
+    {
+      "label": ".onSensorChanged()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "gesture_chopdetector_chopdetector_onsensorchanged",
+      "community": 5,
+      "norm_label": ".onsensorchanged()"
+    },
+    {
+      "label": "SensorEvent",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "sensorevent",
+      "community": 5,
+      "norm_label": "sensorevent"
+    },
+    {
+      "label": ".onAccuracyChanged()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "gesture_chopdetector_chopdetector_onaccuracychanged",
+      "community": 5,
+      "norm_label": ".onaccuracychanged()"
+    },
+    {
+      "label": "Sensor",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "sensor",
+      "community": 5,
+      "norm_label": "sensor"
+    },
+    {
+      "label": "Int",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_gesture_chopdetector_kt_int",
+      "community": 5,
+      "norm_label": "int"
     },
     {
       "label": "Color.kt",
@@ -299,7 +440,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "theme_color",
-      "community": 12,
+      "community": 13,
       "norm_label": "color.kt"
     },
     {
@@ -309,7 +450,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "theme_theme",
-      "community": 0,
+      "community": 4,
       "norm_label": "theme.kt"
     },
     {
@@ -319,7 +460,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "theme_theme_emptyactivitytheme",
-      "community": 0,
+      "community": 4,
       "norm_label": "emptyactivitytheme()"
     },
     {
@@ -328,8 +469,8 @@
       "source_file": "app/src/main/java/com/example/empty_activity/theme/Theme.kt",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "boolean",
-      "community": 0,
+      "id": "app_src_main_java_com_example_empty_activity_theme_theme_kt_boolean",
+      "community": 4,
       "norm_label": "boolean"
     },
     {
@@ -339,118 +480,228 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "theme_type",
-      "community": 13,
+      "community": 14,
       "norm_label": "type.kt"
     },
     {
-      "label": "MainScreen.kt",
+      "label": "TorchController.kt",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "main_mainscreen",
-      "community": 0,
-      "norm_label": "mainscreen.kt"
+      "id": "torch_torchcontroller",
+      "community": 1,
+      "norm_label": "torchcontroller.kt"
     },
     {
-      "label": "MainScreen()",
+      "label": "TorchController",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "main_mainscreen_mainscreen",
-      "community": 0,
-      "norm_label": "mainscreen()"
+      "id": "torch_torchcontroller_torchcontroller",
+      "community": 1,
+      "norm_label": "torchcontroller"
     },
     {
-      "label": "Modifier",
+      "label": "StateFlow",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L15",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L21",
       "_origin": "ast",
-      "id": "modifier",
-      "community": 0,
-      "norm_label": "modifier"
+      "id": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_stateflow",
+      "community": 1,
+      "norm_label": "stateflow"
     },
     {
-      "label": "MainScreenViewModel",
+      "label": "Boolean",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L15",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L21",
       "_origin": "ast",
-      "id": "mainscreenviewmodel",
-      "community": 5,
-      "norm_label": "mainscreenviewmodel"
+      "id": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_boolean",
+      "community": 1,
+      "norm_label": "boolean"
     },
     {
-      "label": "List",
+      "label": "Int",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L35",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L24",
       "_origin": "ast",
-      "id": "app_src_main_java_com_example_empty_activity_ui_main_mainscreen_kt_list",
-      "community": 0,
-      "norm_label": "list"
+      "id": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_int",
+      "community": 1,
+      "norm_label": "int"
+    },
+    {
+      "label": ".registerCallback()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "torch_torchcontroller_torchcontroller_registercallback",
+      "community": 1,
+      "norm_label": ".registercallback()"
+    },
+    {
+      "label": ".unregisterCallback()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "torch_torchcontroller_torchcontroller_unregistercallback",
+      "community": 1,
+      "norm_label": ".unregistercallback()"
+    },
+    {
+      "label": ".setTorchEnabled()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "torch_torchcontroller_torchcontroller_settorchenabled",
+      "community": 1,
+      "norm_label": ".settorchenabled()"
+    },
+    {
+      "label": ".setBrightnessLevel()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "torch_torchcontroller_torchcontroller_setbrightnesslevel",
+      "community": 1,
+      "norm_label": ".setbrightnesslevel()"
+    },
+    {
+      "label": ".requireTorchCameraId()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "torch_torchcontroller_torchcontroller_requiretorchcameraid",
+      "community": 1,
+      "norm_label": ".requiretorchcameraid()"
     },
     {
       "label": "String",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L35",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L98",
       "_origin": "ast",
-      "id": "app_src_main_java_com_example_empty_activity_ui_main_mainscreen_kt_string",
-      "community": 0,
+      "id": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_string",
+      "community": 1,
       "norm_label": "string"
     },
     {
-      "label": "Greeting()",
+      "label": ".findTorchCameraId()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L40",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L100",
       "_origin": "ast",
-      "id": "main_mainscreen_greeting",
-      "community": 0,
-      "norm_label": "greeting()"
+      "id": "torch_torchcontroller_torchcontroller_findtorchcameraid",
+      "community": 1,
+      "norm_label": ".findtorchcameraid()"
     },
     {
-      "label": "MainScreenPreview()",
+      "label": ".findMaxBrightnessLevel()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L45",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L115",
       "_origin": "ast",
-      "id": "main_mainscreen_mainscreenpreview",
-      "community": 0,
-      "norm_label": "mainscreenpreview()"
+      "id": "torch_torchcontroller_torchcontroller_findmaxbrightnesslevel",
+      "community": 1,
+      "norm_label": ".findmaxbrightnesslevel()"
     },
     {
-      "label": "MainScreenPortraitPreview()",
+      "label": ".turnOnTorchWithStrengthLevel()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L51",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L129",
       "_origin": "ast",
-      "id": "main_mainscreen_mainscreenportraitpreview",
-      "community": 0,
-      "norm_label": "mainscreenportraitpreview()"
+      "id": "torch_torchcontroller_torchcontroller_turnontorchwithstrengthlevel",
+      "community": 1,
+      "norm_label": ".turnontorchwithstrengthlevel()"
     },
     {
-      "label": "MainScreenViewModel.kt",
+      "label": "FlashlightScreen.kt",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodel",
-      "community": 6,
-      "norm_label": "mainscreenviewmodel.kt"
+      "id": "flashlight_flashlightscreen",
+      "community": 4,
+      "norm_label": "flashlightscreen.kt"
     },
     {
-      "label": "MainScreenViewModel",
+      "label": "FlashlightScreen()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L13",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L44",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodel_mainscreenviewmodel",
-      "community": 6,
-      "norm_label": "mainscreenviewmodel"
+      "id": "flashlight_flashlightscreen_flashlightscreen",
+      "community": 4,
+      "norm_label": "flashlightscreen()"
+    },
+    {
+      "label": "Modifier",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightscreen_kt_modifier",
+      "community": 4,
+      "norm_label": "modifier"
+    },
+    {
+      "label": "FlashlightViewModel",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightscreen_kt_flashlightviewmodel",
+      "community": 4,
+      "norm_label": "flashlightviewmodel"
+    },
+    {
+      "label": "FlashlightUiState",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightscreen_kt_flashlightuistate",
+      "community": 4,
+      "norm_label": "flashlightuistate"
+    },
+    {
+      "label": "FlashlightScreenPreview()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L186",
+      "_origin": "ast",
+      "id": "flashlight_flashlightscreen_flashlightscreenpreview",
+      "community": 4,
+      "norm_label": "flashlightscreenpreview()"
+    },
+    {
+      "label": "FlashlightViewModel.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "flashlight_flashlightviewmodel",
+      "community": 0,
+      "norm_label": "flashlightviewmodel.kt"
+    },
+    {
+      "label": "FlashlightViewModel",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "community": 0,
+      "norm_label": "flashlightviewmodel"
     },
     {
       "label": "ViewModel",
@@ -459,148 +710,198 @@
       "source_location": "",
       "_origin": "ast",
       "id": "viewmodel",
-      "community": 6,
+      "community": 0,
       "norm_label": "viewmodel"
     },
     {
       "label": "StateFlow",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L14",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L22",
       "_origin": "ast",
-      "id": "stateflow",
-      "community": 6,
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_stateflow",
+      "community": 0,
       "norm_label": "stateflow"
     },
     {
-      "label": "MainScreenUiState",
+      "label": "FlashlightUiState",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L14",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L22",
       "_origin": "ast",
-      "id": "mainscreenuistate",
-      "community": 5,
-      "norm_label": "mainscreenuistate"
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_flashlightuistate",
+      "community": 0,
+      "norm_label": "flashlightuistate"
     },
     {
-      "label": "MainScreenUiState",
+      "label": ".setCameraPermissionGranted()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L27",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L40",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodel_mainscreenuistate",
-      "community": 6,
-      "norm_label": "mainscreenuistate"
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel_setcamerapermissiongranted",
+      "community": 0,
+      "norm_label": ".setcamerapermissiongranted()"
     },
     {
-      "label": "Loading",
+      "label": "Boolean",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L28",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L40",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodel_loading",
-      "community": 6,
-      "norm_label": "loading"
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_boolean",
+      "community": 0,
+      "norm_label": "boolean"
     },
     {
-      "label": "Error",
+      "label": ".toggleTorch()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L30",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L44",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodel_error",
-      "community": 6,
-      "norm_label": "error"
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel_toggletorch",
+      "community": 0,
+      "norm_label": ".toggletorch()"
     },
     {
-      "label": "Success",
+      "label": ".setBrightnessLevel()",
       "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L32",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L59",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodel_success",
-      "community": 6,
-      "norm_label": "success"
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel_setbrightnesslevel",
+      "community": 0,
+      "norm_label": ".setbrightnesslevel()"
     },
     {
-      "label": "MainScreenViewModelTest.kt",
+      "label": "Int",
       "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L1",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L59",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodeltest",
-      "community": 4,
-      "norm_label": "mainscreenviewmodeltest.kt"
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_int",
+      "community": 0,
+      "norm_label": "int"
     },
     {
-      "label": "MainScreenViewModelTest",
+      "label": ".onVolumeKey()",
       "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L11",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L67",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodeltest_mainscreenviewmodeltest",
-      "community": 4,
-      "norm_label": "mainscreenviewmodeltest"
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel_onvolumekey",
+      "community": 0,
+      "norm_label": ".onvolumekey()"
     },
     {
-      "label": ".uiState_initiallyLoading()",
+      "label": ".clearError()",
       "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L12",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L81",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodeltest_mainscreenviewmodeltest_uistate_initiallyloading",
-      "community": 4,
-      "norm_label": ".uistate_initiallyloading()"
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel_clearerror",
+      "community": 0,
+      "norm_label": ".clearerror()"
     },
     {
-      "label": ".uiState_onItemSaved_isDisplayed()",
+      "label": ".onCleared()",
       "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L18",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L85",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodeltest_mainscreenviewmodeltest_uistate_onitemsaved_isdisplayed",
-      "community": 4,
-      "norm_label": ".uistate_onitemsaved_isdisplayed()"
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel_oncleared",
+      "community": 0,
+      "norm_label": ".oncleared()"
     },
     {
-      "label": "FakeMyModelRepository",
+      "label": ".showError()",
       "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L25",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L91",
       "_origin": "ast",
-      "id": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "community": 4,
-      "norm_label": "fakemymodelrepository"
-    },
-    {
-      "label": "Flow",
-      "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "app_src_test_java_com_example_empty_activity_ui_main_mainscreenviewmodeltest_kt_flow",
-      "community": 4,
-      "norm_label": "flow"
-    },
-    {
-      "label": "List",
-      "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "app_src_test_java_com_example_empty_activity_ui_main_mainscreenviewmodeltest_kt_list",
-      "community": 4,
-      "norm_label": "list"
+      "id": "flashlight_flashlightviewmodel_flashlightviewmodel_showerror",
+      "community": 0,
+      "norm_label": ".showerror()"
     },
     {
       "label": "String",
       "file_type": "code",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L26",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L91",
       "_origin": "ast",
-      "id": "app_src_test_java_com_example_empty_activity_ui_main_mainscreenviewmodeltest_kt_string",
-      "community": 4,
+      "id": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_string",
+      "community": 0,
       "norm_label": "string"
+    },
+    {
+      "label": "FlashlightUiState",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L96",
+      "_origin": "ast",
+      "id": "flashlight_flashlightviewmodel_flashlightuistate",
+      "community": 0,
+      "norm_label": "flashlightuistate"
+    },
+    {
+      "label": "ScreenTorchScreen.kt",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "screentorch_screentorchscreen",
+      "community": 6,
+      "norm_label": "screentorchscreen.kt"
+    },
+    {
+      "label": "ScreenTorchScreen()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "screentorch_screentorchscreen_screentorchscreen",
+      "community": 6,
+      "norm_label": "screentorchscreen()"
+    },
+    {
+      "label": "Modifier",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "app_src_main_java_com_example_empty_activity_ui_screentorch_screentorchscreen_kt_modifier",
+      "community": 6,
+      "norm_label": "modifier"
+    },
+    {
+      "label": "findActivity()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "screentorch_screentorchscreen_findactivity",
+      "community": 6,
+      "norm_label": "findactivity()"
+    },
+    {
+      "label": "Activity",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "activity",
+      "community": 6,
+      "norm_label": "activity"
+    },
+    {
+      "label": "ScreenTorchScreenPreview()",
+      "file_type": "code",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "screentorch_screentorchscreen_screentorchscreenpreview",
+      "community": 6,
+      "norm_label": "screentorchscreenpreview()"
     },
     {
       "label": "build.gradle.kts",
@@ -619,441 +920,240 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "settings_gradle",
-      "community": 11,
+      "community": 12,
       "norm_label": "settings.gradle.kts"
     },
     {
-      "label": "MainNavigation",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "13",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "mainnavigation",
-      "community": 3,
-      "norm_label": "mainnavigation"
-    },
-    {
-      "label": "Main NavKey",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/NavigationKeys.kt",
-      "source_location": "6",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "navkey_main",
-      "community": 3,
-      "norm_label": "main navkey"
-    },
-    {
-      "label": "DataResult<T>",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "6",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "dataresult",
-      "community": 2,
-      "norm_label": "dataresult<t>"
-    },
-    {
-      "label": "EmptyActivityTheme",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/theme/Theme.kt",
-      "source_location": "31",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "emptyactivitytheme",
-      "community": 3,
-      "norm_label": "emptyactivitytheme"
-    },
-    {
-      "label": "Color Palette",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/theme/Color.kt",
-      "source_location": "1",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "color_palette",
-      "community": 3,
-      "norm_label": "color palette"
-    },
-    {
-      "label": "Typography",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/theme/Type.kt",
-      "source_location": "10",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "typography",
-      "community": 3,
-      "norm_label": "typography"
-    },
-    {
-      "label": "MainScreen",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "16",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "mainscreen_composable",
-      "community": 5,
-      "norm_label": "mainscreen"
-    },
-    {
-      "label": "Navigation3 Pattern",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "13",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "nav3_pattern",
-      "community": 3,
-      "norm_label": "navigation3 pattern"
-    },
-    {
-      "label": "Repository Pattern",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "12",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "repository_pattern",
-      "community": 2,
-      "norm_label": "repository pattern"
-    },
-    {
-      "label": "MVVM Pattern",
-      "file_type": "code",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "1",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "mvvm_pattern",
-      "community": 5,
-      "norm_label": "mvvm pattern"
-    },
-    {
-      "label": "Flashlight Feature",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "6",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "flashlight_feature",
-      "community": 1,
-      "norm_label": "flashlight feature"
-    },
-    {
-      "label": "TorchController (planned)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "32",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "torch_controller_planned",
-      "community": 1,
-      "norm_label": "torchcontroller (planned)"
-    },
-    {
-      "label": "ChopDetector (planned)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "33",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "chop_detector_planned",
-      "community": 1,
-      "norm_label": "chopdetector (planned)"
-    },
-    {
-      "label": "FlashlightScreen (planned)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "34",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "flashlightscreen_planned",
-      "community": 1,
-      "norm_label": "flashlightscreen (planned)"
-    },
-    {
-      "label": "FlashlightViewModel (planned)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "35",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "flashlightviewmodel_planned",
-      "community": 1,
-      "norm_label": "flashlightviewmodel (planned)"
-    },
-    {
-      "label": "ScreenTorchScreen (planned)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "36",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "screentorchscreen_planned",
-      "community": 1,
-      "norm_label": "screentorchscreen (planned)"
-    },
-    {
-      "label": "CAMERA Permission Requirement",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "31",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "camera_permission_required",
-      "community": 1,
-      "norm_label": "camera permission requirement"
-    },
-    {
-      "label": "Volume Button Control",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "6",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "volume_button_control",
-      "community": 1,
-      "norm_label": "volume button control"
-    },
-    {
-      "label": "Double-Chop Gesture",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "6",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "chop_gesture",
-      "community": 1,
-      "norm_label": "double-chop gesture"
-    },
-    {
-      "label": "Screen Torch Mode",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "6",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "screen_torch_mode",
-      "community": 1,
-      "norm_label": "screen torch mode"
-    },
-    {
-      "label": "TurnOnTorchWithStrengthLevel API",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "56",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "torch_brightness_api",
-      "community": 1,
-      "norm_label": "turnontorchwithstrengthlevel api"
-    },
-    {
-      "label": "Linear Acceleration Sensor",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "59",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "linear_acceleration_sensor",
-      "community": 1,
-      "norm_label": "linear acceleration sensor"
-    },
-    {
-      "label": "Inverted ColorScheme Bug",
+      "label": "AGENTS.md",
       "file_type": "document",
       "source_file": "AGENTS.md",
-      "source_location": "56",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "inverted_colorscheme_bug",
-      "community": 3,
-      "norm_label": "inverted colorscheme bug"
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents_md",
+      "community": 2,
+      "norm_label": "agents.md"
     },
     {
-      "label": "MainScreenViewModelTest Compilation Issue",
+      "label": "PROJECT KNOWLEDGE BASE",
       "file_type": "document",
       "source_file": "AGENTS.md",
-      "source_location": "57",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "test_compilation_issue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents_project_knowledge_base",
       "community": 2,
-      "norm_label": "mainscreenviewmodeltest compilation issue"
+      "norm_label": "project knowledge base"
     },
     {
-      "label": "Android Robot Launcher Icon",
-      "file_type": "image",
-      "source_file": "app/src/main/res/mipmap-hdpi/ic_launcher.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "ic_launcher_android_icon",
-      "community": 7,
-      "norm_label": "android robot launcher icon"
+      "label": "OVERVIEW",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "agents_overview",
+      "community": 2,
+      "norm_label": "overview"
     },
     {
-      "label": "Green Grid Design Pattern",
-      "file_type": "image",
-      "source_file": "app/src/main/res/mipmap-hdpi/ic_launcher.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "ic_launcher_design_system",
-      "community": 7,
-      "norm_label": "green grid design pattern"
+      "label": "STRUCTURE",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "agents_structure",
+      "community": 2,
+      "norm_label": "structure"
     },
     {
-      "label": "Android Adaptive Icon System",
-      "file_type": "image",
-      "source_file": "app/src/main/res/mipmap-hdpi/ic_launcher.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "android_adaptive_icons",
-      "community": 7,
-      "norm_label": "android adaptive icon system"
+      "label": "WHERE TO LOOK",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "agents_where_to_look",
+      "community": 2,
+      "norm_label": "where to look"
     },
     {
-      "label": "Density-Independent Resource Strategy",
-      "file_type": "image",
-      "source_file": "app/src/main/res/mipmap-hdpi/ic_launcher.webp",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "density_independent_resources",
-      "community": 7,
-      "norm_label": "density-independent resource strategy"
+      "label": "STACK SPECIFICS",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "agents_stack_specifics",
+      "community": 2,
+      "norm_label": "stack specifics"
+    },
+    {
+      "label": "CONVENTIONS",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "agents_conventions",
+      "community": 2,
+      "norm_label": "conventions"
+    },
+    {
+      "label": "KNOWN BUGS / GOTCHAS (don't \"fix\" without context)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "agents_known_bugs_gotchas_don_t_fix_without_context",
+      "community": 2,
+      "norm_label": "known bugs / gotchas (don't \"fix\" without context)"
+    },
+    {
+      "label": "ANTI-PATTERNS (this project)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "agents_anti_patterns_this_project",
+      "community": 2,
+      "norm_label": "anti-patterns (this project)"
+    },
+    {
+      "label": "COMMANDS",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "agents_commands",
+      "community": 2,
+      "norm_label": "commands"
+    },
+    {
+      "label": "Gradle",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "agents_gradle",
+      "community": 2,
+      "norm_label": "gradle"
+    },
+    {
+      "label": "Graphify: `uv graphify` generates a static call graph of the codebase. Output is in `graphify-out/` and can be viewed with `index.html` in that folder. The graph includes calls from Android framework entry points (e.g. `Activity.onCreate`) to app code, but does not include external library code (e.g. Compose runtime) or calls between library code.",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "agents_graphify_uv_graphify_generates_a_static_call_graph_of_the_codebase_output_is_in_graphify_out_and_can_be_viewed_with_index_html_in_that_folder_the_graph_includes_calls_from_android_framework_entry_points_e_g_activity_oncreate_to_app_code_but_does_not_include_external_library_code_e_g_compose_runtime_or_calls_between_library_code",
+      "community": 2,
+      "norm_label": "graphify: `uv graphify` generates a static call graph of the codebase. output is in `graphify-out/` and can be viewed with `index.html` in that folder. the graph includes calls from android framework entry points (e.g. `activity.oncreate`) to app code, but does not include external library code (e.g. compose runtime) or calls between library code."
+    },
+    {
+      "label": "NOTES",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "agents_notes",
+      "community": 2,
+      "norm_label": "notes"
+    },
+    {
+      "label": "HANDOFF.md",
+      "file_type": "document",
+      "source_file": "HANDOFF.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "handoff",
+      "community": 11,
+      "norm_label": "handoff.md"
     }
   ],
   "links": [
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
       "source_location": "L11",
       "weight": 1.0,
-      "source": "main_mainscreentest",
-      "target": "main_mainscreentest_mainscreentest",
+      "source": "flashlight_flashlightscreentest",
+      "target": "flashlight_flashlightscreentest_flashlightscreentest",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
-      "source_location": "L20",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
+      "source_location": "L35",
       "weight": 1.0,
-      "source": "main_mainscreentest_mainscreentest",
-      "target": "main_mainscreentest_mainscreentest_firstitem_exists",
+      "source": "flashlight_flashlightscreentest_flashlightscreentest",
+      "target": "flashlight_flashlightscreentest_flashlightscreentest_flashlightcontrols_exist",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
-      "source_location": "L15",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
+      "source_location": "L14",
       "weight": 1.0,
-      "source": "main_mainscreentest_mainscreentest",
-      "target": "main_mainscreentest_mainscreentest_setup",
+      "source": "flashlight_flashlightscreentest_flashlightscreentest",
+      "target": "flashlight_flashlightscreentest_flashlightscreentest_setup",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "tests",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
-      "source_location": "17",
-      "weight": 1.0,
-      "source": "main_mainscreentest_mainscreentest",
-      "target": "mainscreen_composable"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/main/MainScreenTest.kt",
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "flashlight_flashlightscreentest_flashlightscreentest_setup",
+      "target": "flashlight_flashlightscreen_flashlightscreen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/src/androidTest/java/com/example/empty_activity/ui/flashlight/FlashlightScreenTest.kt",
       "source_location": "L17",
       "weight": 1.0,
-      "source": "main_mainscreentest_mainscreentest_setup",
-      "target": "main_mainscreen_mainscreen"
+      "source": "flashlight_flashlightscreentest_flashlightscreentest_setup",
+      "target": "theme_theme_emptyactivitytheme"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "empty_activity_mainactivity",
       "target": "empty_activity_mainactivity_mainactivity",
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "field",
+      "source": "empty_activity_mainactivity_mainactivity",
+      "target": "app_src_main_java_com_example_empty_activity_mainactivity_kt_flashlightviewmodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "field",
+      "source": "empty_activity_mainactivity_mainactivity",
+      "target": "chopdetector",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "empty_activity_mainactivity_mainactivity",
       "target": "componentactivity",
@@ -1063,37 +1163,58 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L23",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "empty_activity_mainactivity_mainactivity",
       "target": "empty_activity_mainactivity_mainactivity_oncreate",
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
+      "relation": "method",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "29",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "empty_activity_mainactivity_mainactivity",
-      "target": "emptyactivitytheme"
+      "target": "empty_activity_mainactivity_mainactivity_onkeydown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "empty_activity_mainactivity_mainactivity",
+      "target": "empty_activity_mainactivity_mainactivity_onstart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "empty_activity_mainactivity_mainactivity",
+      "target": "empty_activity_mainactivity_mainactivity_onstop",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "32",
+      "source_location": "L41",
       "weight": 1.0,
-      "source": "empty_activity_mainactivity_mainactivity",
-      "target": "mainnavigation"
+      "source": "empty_activity_mainactivity_mainactivity_oncreate",
+      "target": "chopdetector",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L23",
+      "source_location": "L36",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "empty_activity_mainactivity_mainactivity_oncreate",
@@ -1106,7 +1227,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L32",
+      "source_location": "L50",
       "weight": 1.0,
       "source": "empty_activity_mainactivity_mainactivity_oncreate",
       "target": "empty_activity_navigation_mainnavigation"
@@ -1117,19 +1238,63 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
-      "source_location": "L29",
+      "source_location": "L47",
       "weight": 1.0,
       "source": "empty_activity_mainactivity_mainactivity_oncreate",
       "target": "theme_theme_emptyactivitytheme"
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "empty_activity_mainactivity_mainactivity_onkeydown",
+      "target": "app_src_main_java_com_example_empty_activity_mainactivity_kt_boolean",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "empty_activity_mainactivity_mainactivity_onkeydown",
+      "target": "app_src_main_java_com_example_empty_activity_mainactivity_kt_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/MainActivity.kt",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "empty_activity_mainactivity_mainactivity_onkeydown",
+      "target": "keyevent",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "empty_activity_navigation",
       "target": "empty_activity_navigation_mainnavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "empty_activity_navigation_mainnavigation",
+      "target": "app_src_main_java_com_example_empty_activity_navigation_kt_flashlightviewmodel",
       "confidence_score": 1.0
     },
     {
@@ -1138,10 +1303,21 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "empty_activity_navigation_mainnavigation",
-      "target": "main_mainscreen_mainscreen"
+      "target": "flashlight_flashlightscreen_flashlightscreen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "empty_activity_navigation_mainnavigation",
+      "target": "screentorch_screentorchscreen_screentorchscreen"
     },
     {
       "relation": "contains",
@@ -1154,12 +1330,32 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/NavigationKeys.kt",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "empty_activity_navigationkeys",
+      "target": "empty_activity_navigationkeys_screentorch",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/empty_activity/NavigationKeys.kt",
       "source_location": "L6",
       "weight": 1.0,
       "source": "empty_activity_navigationkeys_main",
+      "target": "navkey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/NavigationKeys.kt",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "empty_activity_navigationkeys_screentorch",
       "target": "navkey",
       "confidence_score": 1.0
     },
@@ -1231,72 +1427,42 @@
       "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
       "source_location": "L13",
       "weight": 1.0,
-      "context": "field",
-      "source": "data_datarepository_datarepository",
-      "target": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_flow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "L13",
-      "weight": 1.0,
-      "context": "generic_arg",
-      "source": "data_datarepository_datarepository",
-      "target": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_list",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "L13",
-      "weight": 1.0,
       "context": "generic_arg",
       "source": "data_datarepository_datarepository",
       "target": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_string",
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "field",
+      "source": "data_datarepository_datarepository",
+      "target": "flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "source": "data_datarepository_datarepository",
+      "target": "list",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "implements",
       "confidence": "EXTRACTED",
       "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "16",
+      "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "data_datarepository_defaultdatarepository",
-      "target": "data_datarepository_datarepository"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "target": "data_datarepository_datarepository"
-    },
-    {
-      "relation": "depends_on",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "13",
-      "weight": 1.0,
-      "source": "mainscreenviewmodel",
-      "target": "data_datarepository_datarepository"
-    },
-    {
-      "relation": "caused_by",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "AGENTS.md",
-      "source_location": "57",
-      "weight": 1.0,
-      "source": "test_compilation_issue",
-      "target": "data_datarepository_datarepository"
+      "target": "data_datarepository_datarepository",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -1306,7 +1472,7 @@
       "weight": 1.0,
       "context": "field",
       "source": "data_datarepository_defaultdatarepository",
-      "target": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_flow",
+      "target": "flow",
       "confidence_score": 1.0
     },
     {
@@ -1317,7 +1483,7 @@
       "weight": 1.0,
       "context": "generic_arg",
       "source": "data_datarepository_defaultdatarepository",
-      "target": "app_src_main_java_com_example_empty_activity_data_datarepository_kt_list",
+      "target": "list",
       "confidence_score": 1.0
     },
     {
@@ -1332,74 +1498,97 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "produces",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "17",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L10",
       "weight": 1.0,
-      "source": "data_datarepository_defaultdatarepository",
-      "target": "dataresult"
+      "source": "gesture_chopdetector",
+      "target": "gesture_chopdetector_chopdetector",
+      "confidence_score": 1.0
     },
     {
-      "relation": "references",
+      "relation": "method",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "18",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L56",
       "weight": 1.0,
-      "source": "data_datarepository_defaultdatarepository",
-      "target": "data_datarepository_datastatus"
+      "source": "gesture_chopdetector_chopdetector",
+      "target": "gesture_chopdetector_chopdetector_onaccuracychanged",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "gesture_chopdetector_chopdetector",
+      "target": "gesture_chopdetector_chopdetector_onsensorchanged",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "gesture_chopdetector_chopdetector",
+      "target": "gesture_chopdetector_chopdetector_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "gesture_chopdetector_chopdetector",
+      "target": "gesture_chopdetector_chopdetector_stop",
+      "confidence_score": 1.0
     },
     {
       "relation": "implements",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "16",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L10",
       "weight": 1.0,
-      "source": "data_datarepository_defaultdatarepository",
-      "target": "repository_pattern"
-    },
-    {
-      "relation": "semantically_similar_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "25",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "target": "data_datarepository_defaultdatarepository"
-    },
-    {
-      "relation": "instantiates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "19",
-      "weight": 1.0,
-      "source": "mainscreen_composable",
-      "target": "data_datarepository_defaultdatarepository"
+      "source": "gesture_chopdetector_chopdetector",
+      "target": "sensoreventlistener",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt",
-      "source_location": "7",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L36",
       "weight": 1.0,
-      "source": "dataresult",
-      "target": "data_datarepository_datastatus"
+      "context": "parameter_type",
+      "source": "gesture_chopdetector_chopdetector_onsensorchanged",
+      "target": "sensorevent",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "17",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L56",
       "weight": 1.0,
-      "source": "mainscreenviewmodel",
-      "target": "data_datarepository_datastatus"
+      "context": "parameter_type",
+      "source": "gesture_chopdetector_chopdetector_onaccuracychanged",
+      "target": "app_src_main_java_com_example_empty_activity_gesture_chopdetector_kt_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/gesture/ChopDetector.kt",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "gesture_chopdetector_chopdetector_onaccuracychanged",
+      "target": "sensor",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1416,21 +1605,10 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L54",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L189",
       "weight": 1.0,
-      "source": "main_mainscreen_mainscreenportraitpreview",
-      "target": "theme_theme_emptyactivitytheme"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L48",
-      "weight": 1.0,
-      "source": "main_mainscreen_mainscreenpreview",
+      "source": "flashlight_flashlightscreen_flashlightscreenpreview",
       "target": "theme_theme_emptyactivitytheme"
     },
     {
@@ -1441,743 +1619,733 @@
       "weight": 1.0,
       "context": "parameter_type",
       "source": "theme_theme_emptyactivitytheme",
-      "target": "boolean",
+      "target": "app_src_main_java_com_example_empty_activity_theme_theme_kt_boolean",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L40",
-      "weight": 1.0,
-      "source": "main_mainscreen",
-      "target": "main_mainscreen_greeting",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "main_mainscreen",
-      "target": "main_mainscreen_mainscreen",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L51",
-      "weight": 1.0,
-      "source": "main_mainscreen",
-      "target": "main_mainscreen_mainscreenportraitpreview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L45",
-      "weight": 1.0,
-      "source": "main_mainscreen",
-      "target": "main_mainscreen_mainscreenpreview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L35",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "source": "main_mainscreen_mainscreen",
-      "target": "app_src_main_java_com_example_empty_activity_ui_main_mainscreen_kt_list",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L35",
-      "weight": 1.0,
-      "context": "generic_arg",
-      "source": "main_mainscreen_mainscreen",
-      "target": "app_src_main_java_com_example_empty_activity_ui_main_mainscreen_kt_string",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "main_mainscreen_mainscreen",
-      "target": "main_mainscreen_greeting",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
       "source_location": "L15",
       "weight": 1.0,
-      "context": "parameter_type",
-      "source": "main_mainscreen_mainscreen",
-      "target": "mainscreenviewmodel",
+      "source": "torch_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L35",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "source": "main_mainscreen_mainscreen",
-      "target": "modifier",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "main_mainscreen_mainscreenportraitpreview",
-      "target": "main_mainscreen_mainscreen",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L48",
-      "weight": 1.0,
-      "source": "main_mainscreen_mainscreenpreview",
-      "target": "main_mainscreen_mainscreen",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L40",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "source": "main_mainscreen_greeting",
-      "target": "modifier",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.7,
-      "source_file": "HANDOFF.md",
-      "source_location": "61",
-      "weight": 1.0,
-      "source": "mainscreenviewmodel",
-      "target": "flashlightviewmodel_planned"
-    },
-    {
-      "relation": "instantiates",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "19",
-      "weight": 1.0,
-      "source": "mainscreen_composable",
-      "target": "mainscreenviewmodel"
-    },
-    {
-      "relation": "produces",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "14",
-      "weight": 1.0,
-      "source": "mainscreenviewmodel",
-      "target": "mainscreenuistate"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "13",
-      "weight": 1.0,
-      "source": "mainscreenviewmodel",
-      "target": "mvvm_pattern"
-    },
-    {
-      "relation": "tests",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "14",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_mainscreenviewmodeltest",
-      "target": "mainscreenviewmodel"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "L40",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "source": "main_mainscreen_greeting",
-      "target": "app_src_main_java_com_example_empty_activity_ui_main_mainscreen_kt_string",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodel",
-      "target": "main_mainscreenviewmodel_error",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
       "source_location": "L28",
       "weight": 1.0,
-      "source": "main_mainscreenviewmodel",
-      "target": "main_mainscreenviewmodel_loading",
+      "context": "field",
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_boolean",
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
       "source_location": "L27",
       "weight": 1.0,
-      "source": "main_mainscreenviewmodel",
-      "target": "main_mainscreenviewmodel_mainscreenuistate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodel",
-      "target": "main_mainscreenviewmodel_mainscreenviewmodel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodel",
-      "target": "main_mainscreenviewmodel_success",
+      "context": "field",
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_int",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L14",
-      "weight": 1.0,
-      "context": "generic_arg",
-      "source": "main_mainscreenviewmodel_mainscreenviewmodel",
-      "target": "mainscreenuistate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L14",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L24",
       "weight": 1.0,
       "context": "field",
-      "source": "main_mainscreenviewmodel_mainscreenviewmodel",
-      "target": "stateflow",
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_stateflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_findmaxbrightnesslevel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_findtorchcameraid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_registercallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_requiretorchcameraid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_setbrightnesslevel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_settorchenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_turnontorchwithstrengthlevel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller",
+      "target": "torch_torchcontroller_torchcontroller_unregistercallback",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "torch_torchcontroller_torchcontroller_settorchenabled",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_boolean",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "torch_torchcontroller_torchcontroller_findmaxbrightnesslevel",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L82",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "torch_torchcontroller_torchcontroller_setbrightnesslevel",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L129",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "torch_torchcontroller_torchcontroller_turnontorchwithstrengthlevel",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller_settorchenabled",
+      "target": "torch_torchcontroller_torchcontroller_requiretorchcameraid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller_settorchenabled",
+      "target": "torch_torchcontroller_torchcontroller_turnontorchwithstrengthlevel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller_setbrightnesslevel",
+      "target": "torch_torchcontroller_torchcontroller_requiretorchcameraid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "torch_torchcontroller_torchcontroller_setbrightnesslevel",
+      "target": "torch_torchcontroller_torchcontroller_turnontorchwithstrengthlevel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "torch_torchcontroller_torchcontroller_requiretorchcameraid",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L100",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "torch_torchcontroller_torchcontroller_findtorchcameraid",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/torch/TorchController.kt",
+      "source_location": "L129",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "torch_torchcontroller_torchcontroller_turnontorchwithstrengthlevel",
+      "target": "app_src_main_java_com_example_empty_activity_torch_torchcontroller_kt_string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "flashlight_flashlightscreen",
+      "target": "flashlight_flashlightscreen_flashlightscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "flashlight_flashlightscreen",
+      "target": "flashlight_flashlightscreen_flashlightscreenpreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "flashlight_flashlightscreen_flashlightscreen",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightscreen_kt_flashlightuistate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "flashlight_flashlightscreen_flashlightscreen",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightscreen_kt_flashlightviewmodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "flashlight_flashlightscreen_flashlightscreen",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightscreen_kt_modifier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "flashlight_flashlightscreen_flashlightscreenpreview",
+      "target": "flashlight_flashlightscreen_flashlightscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightScreen.kt",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "flashlight_flashlightscreen_flashlightscreenpreview",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightscreen_kt_flashlightuistate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightuistate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_flashlightuistate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "field",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_stateflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_clearerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_oncleared",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_onvolumekey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_setbrightnesslevel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_setcamerapermissiongranted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_showerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_toggletorch",
       "confidence_score": 1.0
     },
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L13",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L14",
       "weight": 1.0,
-      "source": "main_mainscreenviewmodel_mainscreenviewmodel",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel",
       "target": "viewmodel",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "21",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L40",
       "weight": 1.0,
-      "source": "mainscreen_composable",
-      "target": "mainscreenuistate"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodel_error",
-      "target": "main_mainscreenviewmodel_mainscreenuistate",
+      "context": "parameter_type",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_setcamerapermissiongranted",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_boolean",
       "confidence_score": 1.0
     },
     {
-      "relation": "implements",
+      "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_onvolumekey",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_boolean",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_toggletorch",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_showerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_onvolumekey",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_setbrightnesslevel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_setbrightnesslevel",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_setbrightnesslevel",
+      "target": "flashlight_flashlightviewmodel_flashlightviewmodel_showerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_onvolumekey",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/flashlight/FlashlightViewModel.kt",
+      "source_location": "L91",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "flashlight_flashlightviewmodel_flashlightviewmodel_showerror",
+      "target": "app_src_main_java_com_example_empty_activity_ui_flashlight_flashlightviewmodel_kt_string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "screentorch_screentorchscreen",
+      "target": "screentorch_screentorchscreen_findactivity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "screentorch_screentorchscreen",
+      "target": "screentorch_screentorchscreen_screentorchscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "screentorch_screentorchscreen",
+      "target": "screentorch_screentorchscreen_screentorchscreenpreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "screentorch_screentorchscreen_screentorchscreen",
+      "target": "app_src_main_java_com_example_empty_activity_ui_screentorch_screentorchscreen_kt_modifier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "screentorch_screentorchscreen_screentorchscreen",
+      "target": "screentorch_screentorchscreen_findactivity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "screentorch_screentorchscreen_screentorchscreenpreview",
+      "target": "screentorch_screentorchscreen_screentorchscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/src/main/java/com/example/empty_activity/ui/screentorch/ScreenTorchScreen.kt",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "screentorch_screentorchscreen_findactivity",
+      "target": "activity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "agents_md",
+      "target": "agents_project_knowledge_base",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_anti_patterns_this_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_conventions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_known_bugs_gotchas_don_t_fix_without_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_stack_specifics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "agents_project_knowledge_base",
+      "target": "agents_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
       "source_location": "L28",
       "weight": 1.0,
-      "source": "main_mainscreenviewmodel_loading",
-      "target": "main_mainscreenviewmodel_mainscreenuistate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreenViewModel.kt",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodel_success",
-      "target": "main_mainscreenviewmodel_mainscreenuistate",
+      "source": "agents_project_knowledge_base",
+      "target": "agents_where_to_look",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L25",
+      "source_file": "AGENTS.md",
+      "source_location": "L73",
       "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest",
-      "target": "main_mainscreenviewmodeltest_fakemymodelrepository",
+      "source": "agents_commands",
+      "target": "agents_gradle",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest",
-      "target": "main_mainscreenviewmodeltest_mainscreenviewmodeltest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_mainscreenviewmodeltest",
-      "target": "main_mainscreenviewmodeltest_mainscreenviewmodeltest_uistate_initiallyloading",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_mainscreenviewmodeltest",
-      "target": "main_mainscreenviewmodeltest_mainscreenviewmodeltest_uistate_onitemsaved_isdisplayed",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "14",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_mainscreenviewmodeltest",
-      "target": "main_mainscreenviewmodeltest_fakemymodelrepository"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_mainscreenviewmodeltest_uistate_initiallyloading",
-      "target": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "main_mainscreenviewmodeltest_mainscreenviewmodeltest_uistate_onitemsaved_isdisplayed",
-      "target": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L26",
-      "weight": 1.0,
-      "context": "field",
-      "source": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "target": "app_src_test_java_com_example_empty_activity_ui_main_mainscreenviewmodeltest_kt_flow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L26",
-      "weight": 1.0,
-      "context": "generic_arg",
-      "source": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "target": "app_src_test_java_com_example_empty_activity_ui_main_mainscreenviewmodeltest_kt_list",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/src/test/java/com/example/empty_activity/ui/main/MainScreenViewModelTest.kt",
-      "source_location": "L26",
-      "weight": 1.0,
-      "context": "generic_arg",
-      "source": "main_mainscreenviewmodeltest_fakemymodelrepository",
-      "target": "app_src_test_java_com_example_empty_activity_ui_main_mainscreenviewmodeltest_kt_string",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "affects",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "57",
+      "source_location": "L83",
       "weight": 1.0,
-      "source": "test_compilation_issue",
-      "target": "main_mainscreenviewmodeltest_fakemymodelrepository"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "22",
-      "weight": 1.0,
-      "source": "mainnavigation",
-      "target": "mainscreen_composable"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "17",
-      "weight": 1.0,
-      "source": "mainnavigation",
-      "target": "nav3_pattern"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/Navigation.kt",
-      "source_location": "15",
-      "weight": 1.0,
-      "source": "mainnavigation",
-      "target": "navkey_main"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/theme/Theme.kt",
-      "source_location": "15",
-      "weight": 1.0,
-      "source": "emptyactivitytheme",
-      "target": "color_palette"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/theme/Theme.kt",
-      "source_location": "50",
-      "weight": 1.0,
-      "source": "emptyactivitytheme",
-      "target": "typography"
-    },
-    {
-      "relation": "affects",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "AGENTS.md",
-      "source_location": "56",
-      "weight": 1.0,
-      "source": "inverted_colorscheme_bug",
-      "target": "emptyactivitytheme"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "48",
-      "weight": 1.0,
-      "source": "mainscreen_composable",
-      "target": "emptyactivitytheme"
-    },
-    {
-      "relation": "will_replace",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "61",
-      "weight": 1.0,
-      "source": "flashlightscreen_planned",
-      "target": "mainscreen_composable"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt",
-      "source_location": "16",
-      "weight": 1.0,
-      "source": "mainscreen_composable",
-      "target": "mvvm_pattern"
-    },
-    {
-      "relation": "requires",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "31",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "camera_permission_required"
-    },
-    {
-      "relation": "requires",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "33",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "chop_detector_planned"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "6",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "chop_gesture"
-    },
-    {
-      "relation": "requires",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "34",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "flashlightscreen_planned"
-    },
-    {
-      "relation": "requires",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "35",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "flashlightviewmodel_planned"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "6",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "screen_torch_mode"
-    },
-    {
-      "relation": "requires",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "36",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "screentorchscreen_planned"
-    },
-    {
-      "relation": "requires",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "32",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "torch_controller_planned"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "6",
-      "weight": 1.0,
-      "source": "flashlight_feature",
-      "target": "volume_button_control"
-    },
-    {
-      "relation": "will_depend_on",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "54",
-      "weight": 1.0,
-      "source": "flashlightviewmodel_planned",
-      "target": "torch_controller_planned"
-    },
-    {
-      "relation": "will_use",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "80",
-      "weight": 1.0,
-      "source": "torch_controller_planned",
-      "target": "torch_brightness_api"
-    },
-    {
-      "relation": "will_use",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "HANDOFF.md",
-      "source_location": "85",
-      "weight": 1.0,
-      "source": "chop_detector_planned",
-      "target": "linear_acceleration_sensor"
-    },
-    {
-      "relation": "will_depend_on",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "HANDOFF.md",
-      "source_location": "34",
-      "weight": 1.0,
-      "source": "flashlightscreen_planned",
-      "target": "flashlightviewmodel_planned"
-    },
-    {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "app/src/main/res/mipmap-hdpi/ic_launcher.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "ic_launcher_android_icon",
-      "target": "android_adaptive_icons"
-    },
-    {
-      "relation": "uses_design",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/res/mipmap-hdpi/ic_launcher.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "ic_launcher_android_icon",
-      "target": "ic_launcher_design_system"
-    },
-    {
-      "relation": "requires",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "app/src/main/res/mipmap-hdpi/ic_launcher.webp",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "android_adaptive_icons",
-      "target": "density_independent_resources"
+      "source": "agents_commands",
+      "target": "agents_graphify_uv_graphify_generates_a_static_call_graph_of_the_codebase_output_is_in_graphify_out_and_can_be_viewed_with_index_html_in_that_folder_the_graph_includes_calls_from_android_framework_entry_points_e_g_activity_oncreate_to_app_code_but_does_not_include_external_library_code_e_g_compose_runtime_or_calls_between_library_code",
+      "confidence_score": 1.0
     }
   ],
-  "hyperedges": [
-    {
-      "id": "mvvm_architecture",
-      "label": "MVVM Architecture Flow",
-      "nodes": [
-        "mainscreen_composable",
-        "mainscreenviewmodel",
-        "datarepository_interface",
-        "defaultdatarepository"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "app/src/main/java/com/example/empty_activity/ui/main/MainScreen.kt"
-    },
-    {
-      "id": "data_result_flow",
-      "label": "Data Result Flow Pattern",
-      "nodes": [
-        "dataresult",
-        "datastatus",
-        "datarepository_interface",
-        "mainscreenuistate"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.9,
-      "source_file": "app/src/main/java/com/example/empty_activity/data/DataRepository.kt"
-    },
-    {
-      "id": "flashlight_implementation_plan",
-      "label": "Flashlight Implementation Components",
-      "nodes": [
-        "torch_controller_planned",
-        "chop_detector_planned",
-        "flashlightscreen_planned",
-        "flashlightviewmodel_planned",
-        "screentorchscreen_planned"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 0.95,
-      "source_file": "HANDOFF.md"
-    },
-    {
-      "id": "launcher_icon_density_set",
-      "label": "Multi-Density Launcher Icon Set",
-      "nodes": [
-        "ic_launcher_android_icon",
-        "android_adaptive_icons",
-        "density_independent_resources"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/res/mipmap-*dpi/ic_launcher*.webp"
-    }
-  ],
-  "built_at_commit": "1f849cdcbe899fe058477f1e9ebb96016b735dd1"
+  "hyperedges": [],
+  "built_at_commit": "3165a1f31d74018db836c50dba4026cd392c18ee"
 }
