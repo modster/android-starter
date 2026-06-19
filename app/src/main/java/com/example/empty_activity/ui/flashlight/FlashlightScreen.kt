@@ -85,9 +85,10 @@ internal fun FlashlightScreen(
   onErrorDismiss: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
-  val background = if (state.isTorchOn) Color(0xFF241900) else Color(0xFF090909)
-  val beamColor = if (state.isTorchOn) Color(0xFFFFD36A) else Color(0xFF1B1B1B)
-  val textColor = if (state.isTorchOn) Color(0xFFFFF4D6) else Color(0xFFEDEDED)
+  val background = MaterialTheme.colorScheme.background //if (state.isTorchOn) Color(0xFF090909)
+    //else Color(0xFF090909)
+  val beamColor = if (state.isTorchOn) Color(0xFF1B1B1B) else Color(0xFF1B1B1B)
+  val textColor = if (state.isTorchOn) Color(0xFFEDEDED) else Color(0xFFEDEDED)
 
   Box(
     modifier = modifier
@@ -102,21 +103,21 @@ internal fun FlashlightScreen(
       horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.Center,
     ) {
-      Text(
-        text = "Photon",
+       Text(
+          text = "Phlashlight",
         color = textColor,
         style = MaterialTheme.typography.displayMedium,
         fontWeight = FontWeight.Bold,
       )
       Text(
-        text = if (state.isTorchOn) "System torch is on" else "System torch is off",
-        color = textColor.copy(alpha = 0.72f),
+        text = if (state.isTorchOn) "Ad Phree." else "Ad Phree.",
+        color = textColor.copy(alpha = 0.32f),
         textAlign = TextAlign.Center,
       )
       Spacer(Modifier.height(36.dp))
       Box(
         modifier = Modifier
-          .size(190.dp)
+          .size(150.dp)
           .clip(CircleShape)
           .background(beamColor)
           .border(2.dp, textColor.copy(alpha = 0.18f), CircleShape)
@@ -130,15 +131,15 @@ internal fun FlashlightScreen(
           fontWeight = FontWeight.Black,
         )
       }
-      Spacer(Modifier.height(32.dp))
+      Spacer(Modifier.height(36.dp))
       Button(onClick = onScreenTorchClick) {
-        Text("Screen torch")
+        Text("Screen Torch")
       }
-      Spacer(Modifier.height(24.dp))
+      Spacer(Modifier.height(36.dp))
       if (!state.isTorchAvailable) {
         Text(
-          text = "No camera flash was found. Screen torch is still available.",
-          color = textColor.copy(alpha = 0.78f),
+          text = "No device torch found. Screen torch is still available.",
+          color = textColor.copy(alpha = 0.28f),
           textAlign = TextAlign.Center,
         )
       } else if (state.supportsBrightness) {
@@ -154,15 +155,16 @@ internal fun FlashlightScreen(
           modifier = Modifier.fillMaxWidth(),
         )
         Text(
-          text = "When the torch is on, volume buttons adjust this level.",
+          text = "Use volume buttons to adjust brightness.",
           color = textColor.copy(alpha = 0.62f),
           textAlign = TextAlign.Center,
           style = MaterialTheme.typography.bodySmall,
         )
       } else {
+        Spacer(Modifier.height(36.dp))
         Text(
-          text = "Torch brightness levels are not available on this device.",
-          color = textColor.copy(alpha = 0.72f),
+          text = "(Torch brightness levels are not available on this device.)",
+          color = textColor.copy(alpha = 0.29f),
           textAlign = TextAlign.Center,
         )
       }

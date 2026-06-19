@@ -11,8 +11,12 @@ import androidx.navigation3.ui.NavDisplay
 import com.example.empty_activity.ui.flashlight.FlashlightScreen
 import com.example.empty_activity.ui.flashlight.FlashlightViewModel
 import com.example.empty_activity.ui.screentorch.ScreenTorchScreen
+import com.example.empty_activity.ui.screentorch.ScreenTorchViewModel
 
-@Composable fun MainNavigation(flashlightViewModel: FlashlightViewModel)
+@Composable fun MainNavigation(
+    flashlightViewModel: FlashlightViewModel,
+    screenTorchViewModel: ScreenTorchViewModel,
+)
 {
     val backStack = rememberNavBackStack(Main)
 
@@ -30,7 +34,7 @@ import com.example.empty_activity.ui.screentorch.ScreenTorchScreen
                 )
             }
             entry<ScreenTorch> {
-                ScreenTorchScreen()
+                ScreenTorchScreen(viewModel = screenTorchViewModel)
             }
         },
     )

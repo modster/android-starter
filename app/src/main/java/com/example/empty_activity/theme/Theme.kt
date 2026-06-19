@@ -12,7 +12,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme =
-    darkColorScheme(primary = Blue80, secondary = BlueGrey80, tertiary = Orange80)
+    darkColorScheme(
+        primary = Blue80,
+        secondary = BlueGrey80,
+        tertiary = Orange80,
+        background = Color(0xFFFFFBFE),
+        surface = Color(0xFFFFFBFE),
+        onPrimary = Color(0xFF381E72),
+        onSecondary = Color(0xFF332D41),
+        onTertiary = Color(0xFF372E12),
+        onBackground = Color(0xFFE6E1E5),
+        onSurface = Color(0xFFE6E1E5),
+    )
 
 private val LightColorScheme = lightColorScheme(
     primary = Blue40,
@@ -40,10 +51,10 @@ private val LightColorScheme = lightColorScheme(
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S ->
         {
             val context = LocalContext.current
-            if (darkTheme) dynamicLightColorScheme(context) else dynamicDarkColorScheme(context)
+            if (darkTheme) dynamicDarkColorScheme(context) else dynamicDarkColorScheme(context)
         }
 
-        darkTheme                                                      -> LightColorScheme
+        darkTheme                                                      -> DarkColorScheme
         else                                                           -> DarkColorScheme
     }
 

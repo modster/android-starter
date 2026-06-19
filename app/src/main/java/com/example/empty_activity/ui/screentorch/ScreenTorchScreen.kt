@@ -52,6 +52,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.max
@@ -59,13 +61,17 @@ import kotlin.math.roundToInt
 import kotlin.math.sin
 
 @Composable
-fun ScreenTorchScreen(modifier: Modifier = Modifier) {
+fun ScreenTorchScreen(
+  modifier: Modifier = Modifier,
+  viewModel: ScreenTorchViewModel = viewModel(),
+) {
   var mode by rememberSaveable { mutableStateOf(ScreenTorchMode.White) }
-  var brightness by rememberSaveable { mutableStateOf(1f) }
   var controlsVisible by rememberSaveable { mutableStateOf(true) }
+  val state by viewModel.uiState.collectAsStateWithLifecycle()
+  val brightness = state.brightness
   val activity = LocalContext.current.findActivity()
 
-  DisposableEffect(activity) {
+  DisposableEffect(activity, viewModel) {
     val window = activity?.window
     val previousBrightness = window?.attributes?.screenBrightness
     val hadKeepScreenOn = window
@@ -82,12 +88,17 @@ fun ScreenTorchScreen(modifier: Modifier = Modifier) {
           window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
       }
+      viewModel.setActive(false)
     }
+  }
+
+  LaunchedEffect(viewModel) {
+    viewModel.setActive(true)
   }
 
   LaunchedEffect(activity, brightness) {
     activity?.window?.let { window ->
-      window.attributes = window.attributes.apply { screenBrightness = brightness.coerceIn(MIN_BRIGHTNESS, 1f) }
+      window.attributes = window.attributes.apply { screenBrightness = brightness.coerceIn(MIN_SCREEN_BRIGHTNESS, MAX_SCREEN_BRIGHTNESS) }
     }
   }
 
@@ -107,7 +118,7 @@ fun ScreenTorchScreen(modifier: Modifier = Modifier) {
         mode = mode,
         brightness = brightness,
         onModeChange = { mode = it },
-        onBrightnessChange = { brightness = it.coerceIn(MIN_BRIGHTNESS, 1f) },
+        onBrightnessChange = viewModel::setBrightness,
         modifier = Modifier.align(Alignment.BottomCenter),
       )
     } else {
@@ -146,6 +157,8 @@ private fun MoodLightCanvas(mode: ScreenTorchMode, modifier: Modifier = Modifier
         secondGlow = Color(0xFFFF6D2D),
         thirdGlow = Color(0xFFA24420),
       )
+      ScreenTorchMode.Candlelight -> drawCandlelight(phase)
+      ScreenTorchMode.OceanDrift -> drawOceanDrift(phase)
       ScreenTorchMode.Romance -> drawMoodLight(
         phase = phase,
         baseColors = listOf(Color(0xFF341038), Color(0xFFC02D68), Color(0xFFFF7B9C)),
@@ -160,6 +173,7 @@ private fun MoodLightCanvas(mode: ScreenTorchMode, modifier: Modifier = Modifier
         secondGlow = Color(0xFF6256FF),
         thirdGlow = Color(0xFF1CB9FF),
       )
+      ScreenTorchMode.LavaLamp -> drawLavaLamp(phase)
       ScreenTorchMode.Ember -> drawMoodLight(
         phase = phase,
         baseColors = listOf(Color(0xFF160807), Color(0xFF7E230C), Color(0xFFFFA44B)),
@@ -220,6 +234,135 @@ private fun DrawScope.drawMoodLight(
   drawRect(Color.Black.copy(alpha = 0.08f))
 }
 
+private fun DrawScope.drawOceanDrift(phase: Float) {
+  val angle = phase * TWO_PI
+  val width = size.width
+  val height = size.height
+  val radius = max(width, height)
+
+  drawRect(
+    brush = Brush.linearGradient(
+      colors = listOf(Color(0xFF00111F), Color(0xFF023A4A), Color(0xFF061B34), Color(0xFF0B5F6B)),
+      start = Offset(width * (0.12f + 0.10f * sin(angle * 0.7f)), height * 0.10f),
+      end = Offset(width * (0.88f + 0.08f * cos(angle * 0.8f)), height * 0.92f),
+    ),
+  )
+  drawCircle(
+    brush = Brush.radialGradient(
+      colors = listOf(Color(0xFF55F0FF).copy(alpha = 0.54f), Color(0xFF00A6B8).copy(alpha = 0.18f), Color.Transparent),
+      center = Offset(width * (0.28f + 0.28f * sin(angle * 0.62f)), height * (0.44f + 0.10f * cos(angle))),
+      radius = radius * 0.72f,
+    ),
+    radius = radius * 0.72f,
+    center = Offset(width * (0.28f + 0.28f * sin(angle * 0.62f)), height * (0.44f + 0.10f * cos(angle))),
+  )
+  drawCircle(
+    brush = Brush.radialGradient(
+      colors = listOf(Color(0xFF74FFD8).copy(alpha = 0.34f), Color.Transparent),
+      center = Offset(width * (0.76f + 0.16f * cos(angle * 1.1f)), height * (0.66f + 0.18f * sin(angle * 0.72f))),
+      radius = radius * 0.58f,
+    ),
+    radius = radius * 0.58f,
+    center = Offset(width * (0.76f + 0.16f * cos(angle * 1.1f)), height * (0.66f + 0.18f * sin(angle * 0.72f))),
+  )
+  drawRect(
+    brush = Brush.linearGradient(
+      colors = listOf(Color.Transparent, Color(0xFF7CEBFF).copy(alpha = 0.14f), Color.Transparent),
+      start = Offset(0f, height * (0.26f + 0.05f * sin(angle * 1.5f))),
+      end = Offset(width, height * (0.54f + 0.05f * cos(angle * 1.2f))),
+    ),
+  )
+}
+
+private fun DrawScope.drawCandlelight(phase: Float) {
+  val angle = phase * TWO_PI
+  val width = size.width
+  val height = size.height
+  val radius = max(width, height)
+  val flicker = (0.88f + 0.07f * sin(angle * 7f) + 0.05f * sin(angle * 13f)).coerceIn(0.76f, 1f)
+  val center = Offset(width * (0.50f + 0.025f * sin(angle * 9f)), height * 0.66f)
+
+  drawRect(
+    brush = Brush.linearGradient(
+      colors = listOf(Color(0xFF1B0802), Color(0xFF552006), Color(0xFF120503)),
+      start = Offset(width * 0.5f, 0f),
+      end = Offset(width * 0.5f, height),
+    ),
+  )
+  drawCircle(
+    brush = Brush.radialGradient(
+      colors = listOf(
+        Color(0xFFFFF0B0).copy(alpha = 0.90f * flicker),
+        Color(0xFFFFA13D).copy(alpha = 0.42f * flicker),
+        Color(0xFFB54512).copy(alpha = 0.18f * flicker),
+        Color.Transparent,
+      ),
+      center = center,
+      radius = radius * (0.46f + 0.08f * flicker),
+    ),
+    radius = radius * (0.46f + 0.08f * flicker),
+    center = center,
+  )
+  drawCircle(
+    brush = Brush.radialGradient(
+      colors = listOf(Color(0xFFFFF9D7).copy(alpha = 0.62f * flicker), Color.Transparent),
+      center = Offset(center.x, center.y - height * 0.15f),
+      radius = radius * 0.18f * flicker,
+    ),
+    radius = radius * 0.18f * flicker,
+    center = Offset(center.x, center.y - height * 0.15f),
+  )
+  drawRect(Color(0xFFFF6A1A).copy(alpha = 0.08f * flicker))
+}
+
+private fun DrawScope.drawLavaLamp(phase: Float) {
+  val angle = phase * TWO_PI
+  val width = size.width
+  val height = size.height
+
+  drawRect(
+    brush = Brush.linearGradient(
+      colors = listOf(Color(0xFF16051F), Color(0xFF3B0C32), Color(0xFF11041B)),
+      start = Offset(width * 0.1f, 0f),
+      end = Offset(width * 0.9f, height),
+    ),
+  )
+  drawLavaBlob(Color(0xFFFF4F8B), angle, 0.30f, 0.30f, 0.30f, 0.16f, 0.22f, 0.78f, 1.12f)
+  drawLavaBlob(Color(0xFFFF7A21), angle, 0.34f, 0.72f, 0.36f, 0.18f, 0.24f, 1.03f, 0.84f)
+  drawLavaBlob(Color(0xFFB95CFF), angle, 0.28f, 0.48f, 0.70f, 0.22f, 0.16f, 0.68f, 1.26f)
+  drawLavaBlob(Color(0xFFFF255F), angle, 0.24f, 0.78f, 0.78f, 0.12f, 0.18f, 1.36f, 0.64f)
+  drawLavaBlob(Color(0xFFFFC15C), angle, 0.18f, 0.18f, 0.82f, 0.10f, 0.10f, 1.52f, 1.42f)
+  drawRect(Color.Black.copy(alpha = 0.10f))
+}
+
+private fun DrawScope.drawLavaBlob(
+  color: Color,
+  angle: Float,
+  radiusFraction: Float,
+  baseX: Float,
+  baseY: Float,
+  xDrift: Float,
+  yDrift: Float,
+  xSpeed: Float,
+  ySpeed: Float,
+) {
+  val radius = max(size.width, size.height) * radiusFraction
+  val center = Offset(
+    size.width * (baseX + xDrift * sin(angle * xSpeed)),
+    size.height * (baseY + yDrift * cos(angle * ySpeed)),
+  )
+
+  drawCircle(
+    brush = Brush.radialGradient(
+      colors = listOf(color.copy(alpha = 0.82f), color.copy(alpha = 0.22f), Color.Transparent),
+      center = center,
+      radius = radius,
+    ),
+    radius = radius,
+    center = center,
+  )
+}
+
 @Composable
 private fun ScreenTorchControls(
   mode: ScreenTorchMode,
@@ -272,7 +415,7 @@ private fun ScreenTorchControls(
     Slider(
       value = brightness,
       onValueChange = onBrightnessChange,
-      valueRange = MIN_BRIGHTNESS..1f,
+      valueRange = MIN_SCREEN_BRIGHTNESS..MAX_SCREEN_BRIGHTNESS,
       modifier = Modifier.fillMaxWidth(),
     )
   }
@@ -291,12 +434,14 @@ private enum class ScreenTorchMode(
 ) {
   White("White", Color(0xFF101010), 12_000),
   WarmBath("Warm bath", Color.White, 18_000),
+  Candlelight("Candlelight", Color.White, 8_000),
+  OceanDrift("Ocean drift", Color.White, 26_000),
   Romance("Romance", Color.White, 20_000),
   Aurora("Aurora", Color.White, 24_000),
+  LavaLamp("Lava lamp", Color.White, 18_000),
   Ember("Ember", Color.White, 10_000),
 }
 
-private const val MIN_BRIGHTNESS = 0.05f
 private const val TWO_PI = (PI * 2).toFloat()
 
 @Preview(showBackground = true)

@@ -21,8 +21,11 @@ class ScreenTorchScreenTest {
     composeTestRule.onNodeWithText("Brightness 100%").assertExists()
     composeTestRule.onNodeWithText("White").assertExists()
     composeTestRule.onNodeWithText("Warm bath").assertExists()
+    composeTestRule.onNodeWithText("Candlelight").assertExists()
+    composeTestRule.onNodeWithText("Ocean drift").assertExists()
     composeTestRule.onNodeWithText("Romance").assertExists()
     composeTestRule.onNodeWithText("Aurora").assertExists()
+    composeTestRule.onNodeWithText("Lava lamp").assertExists()
     composeTestRule.onNodeWithText("Ember").assertExists()
   }
 }

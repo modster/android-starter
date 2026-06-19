@@ -16,6 +16,7 @@ import com.example.empty_activity.gesture.ChopDetector
 import com.example.empty_activity.theme.EmptyActivityTheme
 import com.example.empty_activity.torch.TorchController
 import com.example.empty_activity.ui.flashlight.FlashlightViewModel
+import com.example.empty_activity.ui.screentorch.ScreenTorchViewModel
 
 class MainActivity : ComponentActivity()
 {
@@ -30,6 +31,7 @@ class MainActivity : ComponentActivity()
             }
         }
     }
+    private val screenTorchViewModel: ScreenTorchViewModel by viewModels()
     private lateinit var chopDetector: ChopDetector
 
 
@@ -47,7 +49,12 @@ class MainActivity : ComponentActivity()
             EmptyActivityTheme {
                 Surface(modifier = Modifier.fillMaxSize(),
                         color = MaterialTheme.colorScheme.background
-                ) { MainNavigation(flashlightViewModel = flashlightViewModel) }
+                ) {
+                    MainNavigation(
+                        flashlightViewModel = flashlightViewModel,
+                        screenTorchViewModel = screenTorchViewModel,
+                    )
+                }
             }
         }
     }
@@ -67,6 +74,10 @@ class MainActivity : ComponentActivity()
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean
     {
         if (flashlightViewModel.onVolumeKey(keyCode)) {
+            return true
+        }
+
+        if (!flashlightViewModel.uiState.value.supportsBrightness && screenTorchViewModel.onVolumeKey(keyCode)) {
             return true
         }
 
