@@ -37,18 +37,10 @@ class FlashlightViewModel(private val torchController: TorchController) : ViewMo
     }
   }
 
-  fun setCameraPermissionGranted(granted: Boolean) {
-    _uiState.update { it.copy(hasCameraPermission = granted) }
-  }
-
   fun toggleTorch() {
     val state = _uiState.value
     if (!state.isTorchAvailable) {
       showError("This device does not report an available camera flash.")
-      return
-    }
-    if (!state.hasCameraPermission) {
-      showError("Camera permission is required to control the system torch.")
       return
     }
 
@@ -58,7 +50,7 @@ class FlashlightViewModel(private val torchController: TorchController) : ViewMo
 
   fun setBrightnessLevel(level: Int) {
     val state = _uiState.value
-    if (!state.supportsBrightness || !state.hasCameraPermission) return
+    if (!state.supportsBrightness) return
 
     runCatching { torchController.setBrightnessLevel(level) }
       .onFailure { showError(it.message ?: "Unable to set torch brightness.") }
@@ -66,7 +58,7 @@ class FlashlightViewModel(private val torchController: TorchController) : ViewMo
 
   fun onVolumeKey(keyCode: Int): Boolean {
     val state = _uiState.value
-    if (!state.isTorchOn || !state.supportsBrightness || !state.hasCameraPermission) return false
+    if (!state.isTorchOn || !state.supportsBrightness) return false
 
     val delta = when (keyCode) {
       KeyEvent.KEYCODE_VOLUME_UP -> 1
@@ -95,7 +87,6 @@ class FlashlightViewModel(private val torchController: TorchController) : ViewMo
 
 data class FlashlightUiState(
   val isTorchAvailable: Boolean = false,
-  val hasCameraPermission: Boolean = false,
   val isTorchOn: Boolean = false,
   val supportsBrightness: Boolean = false,
   val brightnessLevel: Int = 1,

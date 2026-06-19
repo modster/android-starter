@@ -75,7 +75,7 @@ class TorchController(context: Context) {
     } catch (exception: CameraAccessException) {
       throw IllegalStateException("Unable to access camera torch", exception)
     } catch (exception: SecurityException) {
-      throw IllegalStateException("Camera permission is required to control the torch", exception)
+      throw IllegalStateException("Unable to control the torch", exception)
     }
   }
 
@@ -91,7 +91,7 @@ class TorchController(context: Context) {
     } catch (exception: CameraAccessException) {
       throw IllegalStateException("Unable to set torch brightness", exception)
     } catch (exception: SecurityException) {
-      throw IllegalStateException("Camera permission is required to set torch brightness", exception)
+      throw IllegalStateException("Unable to set torch brightness", exception)
     }
   }
 

@@ -18,7 +18,6 @@ class FlashlightScreenTest {
         FlashlightScreen(
           state = FlashlightUiState(
             isTorchAvailable = true,
-            hasCameraPermission = true,
             supportsBrightness = true,
             brightnessLevel = 4,
             maxBrightnessLevel = 10,

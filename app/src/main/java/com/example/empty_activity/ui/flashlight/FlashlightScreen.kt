@@ -1,9 +1,5 @@
 package com.example.empty_activity.ui.flashlight
 
-import android.Manifest
-import android.content.pm.PackageManager
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -24,19 +20,16 @@ import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.empty_activity.theme.EmptyActivityTheme
 import kotlin.math.roundToInt
@@ -48,27 +41,10 @@ fun FlashlightScreen(
   viewModel: FlashlightViewModel,
 ) {
   val state by viewModel.uiState.collectAsStateWithLifecycle()
-  val context = LocalContext.current
-  val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-    viewModel.setCameraPermissionGranted(granted)
-    if (granted) viewModel.toggleTorch()
-  }
-
-  LaunchedEffect(context) {
-    viewModel.setCameraPermissionGranted(
-      ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED,
-    )
-  }
 
   FlashlightScreen(
     state = state,
-    onToggleClick = {
-      if (state.hasCameraPermission) {
-        viewModel.toggleTorch()
-      } else {
-        permissionLauncher.launch(Manifest.permission.CAMERA)
-      }
-    },
+    onToggleClick = viewModel::toggleTorch,
     onBrightnessChange = viewModel::setBrightnessLevel,
     onScreenTorchClick = onScreenTorchClick,
     onErrorDismiss = viewModel::clearError,
@@ -85,8 +61,7 @@ internal fun FlashlightScreen(
   onErrorDismiss: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
-  val background = MaterialTheme.colorScheme.background //if (state.isTorchOn) Color(0xFF090909)
-    //else Color(0xFF090909)
+  val background = MaterialTheme.colorScheme.background
   val beamColor = if (state.isTorchOn) Color(0xFF1B1B1B) else Color(0xFF1B1B1B)
   val textColor = if (state.isTorchOn) Color(0xFFEDEDED) else Color(0xFFEDEDED)
 
@@ -160,13 +135,6 @@ internal fun FlashlightScreen(
           textAlign = TextAlign.Center,
           style = MaterialTheme.typography.bodySmall,
         )
-      } else {
-        Spacer(Modifier.height(36.dp))
-        Text(
-          text = "(Torch brightness levels are not available on this device.)",
-          color = textColor.copy(alpha = 0.29f),
-          textAlign = TextAlign.Center,
-        )
       }
     }
 
@@ -192,7 +160,6 @@ fun FlashlightScreenPreview() {
     FlashlightScreen(
       state = FlashlightUiState(
         isTorchAvailable = true,
-        hasCameraPermission = true,
         supportsBrightness = true,
         brightnessLevel = 4,
         maxBrightnessLevel = 10,
